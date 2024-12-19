@@ -1,15 +1,5 @@
-const pino = require('pino')
+const logger = require('./logger')
 const policies = require('./policies')
-
-const logger = pino({
-  level: process.env.NODE_ENV === 'test' ? 'silent' : 'info',
-  transport: {
-    target: 'pino-pretty',
-    options: {
-      colorize: true
-    }
-  }
-})
 
 const listPolicies = () => {
   logger.info('Available policies:')
