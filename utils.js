@@ -1,4 +1,4 @@
-const pino = require('pino');
+const pino = require('pino')
 const policies = require('./policies')
 
 const logger = pino({
@@ -6,10 +6,10 @@ const logger = pino({
   transport: {
     target: 'pino-pretty',
     options: {
-      colorize: true,
-    },
-  },
-});
+      colorize: true
+    }
+  }
+})
 
 const listPolicies = () => {
   logger.info('Available policies:')
@@ -24,12 +24,20 @@ const applyPolicy = (policyName, githubOrg) => {
     return
   }
 
+  ensureGithubToken()
+
   const policy = policies.find((policy) => policy.name === policyName)
   if (policy) {
     logger.info(`Applying policy: ${policyName} to GitHub organization: ${githubOrg}`)
     policy.policy(githubOrg)
   } else {
     logger.info(`Policy '${policyName}' not found. Use --list to see available policies.`, 'error')
+  }
+}
+
+const ensureGithubToken = () => {
+  if (!process.env.GITHUB_TOKEN) {
+    throw new Error('GITHUB_TOKEN is required')
   }
 }
 
