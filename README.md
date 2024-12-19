@@ -25,6 +25,33 @@ fortSphere is a tool designed to help you manage and fortify your digital sphere
 
 ## Installation
 
+### npm
+
+You can install it globally:
+
+```bash
+npm i -g fortsphere
+fortsphere version
+```
+
+You can use it as `npx`:
+
+```bash
+npx fortsphere version
+```
+
+### Docker container
+
+You can use Docker:
+
+```bash
+docker pull ghcr.io/openpathfinder/fortsphere:latest
+docker run --rm ghcr.io/openpathfinder/fortsphere:latest version
+```
+
+You can create an alias like `alias fortsphere="docker run --rm ghcr.io/openpathfinder/fortsphere:latest"`
+
+### Source Code
 To install fortSphere, clone the repository and install the dependencies:
 
 ```sh
@@ -33,14 +60,17 @@ cd fortsphere
 npm install
 ```
 
+You can create an alias like `alias fortsphere="node fortsphere.js"`
+
 ## Usage
+
 
 ### Version Command
 
 Display the current version of fortSphere:
 
 ```bash
-node fortsphere.js version
+fortsphere version
 ```
 
 ### Policy Management Command
@@ -49,11 +79,11 @@ Manage policies for your GitHub organization:
 
 - List all available policies:
     ```bash
-    node fortsphere.js policy --list
+    fortsphere policy --list
     ```
 - Apply a policy to a GitHub organization:
     ```bash
-    node fortsphere.js policy --apply <policy> --github-org <githubOrg>
+    fortsphere policy --apply <policy> --github-org <githubOrg>
     ```
 
 ### GitHub Tokens
@@ -63,7 +93,8 @@ To run this application, you need a GitHub token with `admin:write` permissions.
 #### Injecting the Token
 
 - Use an environment variable named `GITHUB_TOKEN` to supply the token.
-- Alternatively, you can use a `.env` file and load it with the command `node --env-file=.env fortsphere.js policy --apply <policy> --github-org <githubOrg>`
+- Alternatively, you can use a `.env` file and load it with the command `node --env-file=.env fortsphere.js policy --apply <policy> --github-org <githubOrg>` when doing local development
+- While using docker images you can use `docker run --rm -e GITHUB_TOKEN=mytoken ghcr.io/openpathfinder/fortsphere:latest policy --apply <policy> --github-org <githubOrg>`
 
 ## Policies
 
