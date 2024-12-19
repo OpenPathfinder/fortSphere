@@ -4,11 +4,13 @@
   "description": "Fortify your Digital Sphere, once command at a time",
   "main": "index.js",
   "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Ulises Gascón",
-  "license": "MIT"
+  "license": "MIT",
   "devDependencies": {
     "standard": "17.1.2"
   }
