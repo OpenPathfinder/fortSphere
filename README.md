@@ -11,6 +11,9 @@ Fortify your Digital Sphere, once command at a time
 
 - [Introduction](#introduction)
 - [Installation](#installation)
+  - [npm](#npm)
+  - [Docker Container](#docker-container)
+  - [Source Code](#source-code)
 - [Usage](#usage)
   - [Version Command](#version-command)
   - [Policy Management Command](#policy-management-command)
