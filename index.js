@@ -1,6 +1,6 @@
 const { Command } = require('commander')
-const { listPolicies, applyPolicy } = require('./utils')
-const logger = require('./logger')
+const { listPolicies, applyPolicy } = require('./lib/utils')
+const logger = require('./lib/logger')
 const pkg = require('./package.json')
 
 const command = new Command()
