@@ -9,4 +9,7 @@
   "keywords": [],
   "author": "Ulises Gascón",
   "license": "MIT"
+  "devDependencies": {
+    "standard": "17.1.2"
+  }
 }
