@@ -40,7 +40,7 @@ npm install
 Display the current version of fortSphere:
 
 ```bash
-node index.js version
+node fortsphere.js version
 ```
 
 ### Policy Management Command
@@ -49,11 +49,11 @@ Manage policies for your GitHub organization:
 
 - List all available policies:
     ```bash
-    node index.js policy --list
+    node fortsphere.js policy --list
     ```
 - Apply a policy to a GitHub organization:
     ```bash
-    node index.js policy --apply <policy> --github-org <githubOrg>
+    node fortsphere.js policy --apply <policy> --github-org <githubOrg>
     ```
 
 ### GitHub Tokens
@@ -63,7 +63,7 @@ To run this application, you need a GitHub token with `admin:write` permissions.
 #### Injecting the Token
 
 - Use an environment variable named `GITHUB_TOKEN` to supply the token.
-- Alternatively, you can use a `.env` file and load it with the command `node --env-file=.env index.js policy --apply <policy> --github-org <githubOrg>`
+- Alternatively, you can use a `.env` file and load it with the command `node --env-file=.env fortsphere.js policy --apply <policy> --github-org <githubOrg>`
 
 ## Policies
 
