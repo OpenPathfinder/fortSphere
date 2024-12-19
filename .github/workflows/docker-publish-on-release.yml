@@ -5,9 +5,13 @@ on:
     types:
       - published
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build-and-push:
-    name: Build and Push Docker Image
+    name: Build and Push Multi-Platform Docker Image
     runs-on: ubuntu-latest
 
     steps:
@@ -23,17 +27,26 @@ jobs:
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
+      with:
+        install: true
 
-    - name: Build and Push Docker Image
+    - name: Set Lowercase Repository Info
+      id: repo_info
+      run: |
+        echo "REPO_OWNER=$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+        echo "REPO_NAME=$(echo ${{ github.event.repository.name }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+
+    - name: Build and Push Multi-Platform Docker Image
       uses: docker/build-push-action@v5
       with:
         context: .
         push: true
+        platforms: linux/amd64,linux/arm64
         tags: |
-          ghcr.io/${{ github.repository }}/fortsphere:latest
-          ghcr.io/${{ github.repository }}/fortsphere:${{ github.event.release.tag_name }}
+          ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:latest
+          ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:${{ github.event.release.tag_name }}
         labels: |
-          org.opencontainers.image.title=Fortsphere
+          org.opencontainers.image.title=fortsphere
           org.opencontainers.image.description="Fortify your digital sphere, one command at a time."
           org.opencontainers.image.url=https://github.com/OpenPathfinder/fortSphere
           org.opencontainers.image.source=https://github.com/OpenPathfinder/fortSphere.git
