@@ -1,6 +1,6 @@
 {
   "name": "fortsphere",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fortify your Digital Sphere, once command at a time",
   "bin": {
     "fortsphere": "fortsphere.js"
