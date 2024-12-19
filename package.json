@@ -1,0 +1,25 @@
+{
+  "name": "fortsphere",
+  "version": "0.1.0",
+  "description": "Fortify your Digital Sphere, once command at a time",
+  "bin": {
+    "fortsphere": "./fortsphere.js"
+  },
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ulises Gascón",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "17.1.2"
+  },
+  "dependencies": {
+    "commander": "12.1.0",
+    "octokit": "3.2.1",
+    "pino": "9.5.0",
+    "pino-pretty": "13.0.0"
+  }
+}
