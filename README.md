@@ -10,6 +10,7 @@ Fortify your Digital Sphere, once command at a time
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Demo](#demo)
 - [Installation](#installation)
   - [npm](#npm)
   - [Docker Container](#docker-container)
@@ -24,7 +25,29 @@ Fortify your Digital Sphere, once command at a time
 
 ## Introduction
 
-fortSphere is a tool designed to help you manage and fortify your digital sphere by applying various policies to your GitHub organization.
+fortSphere is a CLI tool designed to help you manage and fortify your digital sphere by applying various policies to your GitHub organization(s) and repositories.
+
+## Demo
+
+### Scenario: While the Setup is fine using `restrictRepoCreationGitHub`
+
+**GitHub UI (before)**
+![Screenshot from 2024-12-19 02-54-57](https://github.com/user-attachments/assets/c85cad6b-7fc9-4060-a723-8f48be10861a)
+
+**fortSphere run and logs**
+![Screenshot from 2024-12-19 02-39-04](https://github.com/user-attachments/assets/fe483669-0228-46b4-8517-091f5f49b558)
+
+---
+
+### Scenario: When the setup requires changes using `restrictRepoCreationGitHub`
+
+**GitHub UI (before)**
+![Screenshot from 2024-12-19 02-55-14](https://github.com/user-attachments/assets/8c92af79-ca25-473c-ad32-45e08157e6a6)
+
+**fortSphere run and logs**
+![Screenshot from 2024-12-19 02-41-00](https://github.com/user-attachments/assets/59470423-2fad-4963-bf49-8d86118501ed)
+
+---
 
 ## Installation
 
