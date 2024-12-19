@@ -1,4 +1,4 @@
-![Logo for FORTSPHERE featuring a cat in a gold astronaut helmet surrounded by rays and a planet above, alongside the text 'FORTSPHERE' and the tagline 'Fortify your digital sphere, one command at a time' in gold gradient on a black background.](.github/OTHER/header.png)
+![Logo for FORTSPHERE featuring a cat in a gold astronaut helmet surrounded by rays and a planet above, alongside the text 'FORTSPHERE' and the tagline 'Fortify your digital sphere, one command at a time' in gold gradient on a black background.](https://raw.githubusercontent.com/OpenPathfinder/branding/refs/heads/main/fortSphere/variation_header.png)
 
 # fortSphere
 
