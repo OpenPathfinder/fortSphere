@@ -1,5 +1,5 @@
 const { Command } = require('commander')
-const { listPolicies, applyPolicy, log } = require('./utils')
+const { listPolicies, applyPolicy, logger } = require('./utils')
 const pkg = require('./package.json')
 
 const command = new Command()
@@ -9,8 +9,8 @@ command
   .command('version')
   .description('Display fortSphere version')
   .action(() => {
-    log(`fortSphere version: ${pkg.version}`)
-    log('IMPORTANT: This is an experimental version of fortSphere', 'warn')
+    logger.info(`fortSphere version: ${pkg.version}`)
+    logger.warn('IMPORTANT: This is an experimental version of fortSphere', 'warn')
   })
 
 // Policy Management Command
@@ -28,7 +28,7 @@ command
     } else if (apply) {
       applyPolicy(apply, githubOrg)
     } else {
-      log('Please provide an option. Use --help to see available options.', 'error')
+      logger.error('Please provide an option. Use --help to see available options.', 'error')
     }
   })
 

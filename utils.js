@@ -1,34 +1,40 @@
+const pino = require('pino');
 const policies = require('./policies')
 
+const logger = pino({
+  level: process.env.NODE_ENV === 'test' ? 'silent' : 'info',
+  transport: {
+    target: 'pino-pretty',
+    options: {
+      colorize: true,
+    },
+  },
+});
+
 const listPolicies = () => {
-  log('Available policies:')
+  logger.info('Available policies:')
   policies.forEach((policy) => {
-    console.log(`- ${policy.name}: ${policy.description}`)
+    logger.info(`- ${policy.name}: ${policy.description}`)
   })
 }
 
 const applyPolicy = (policyName, githubOrg) => {
   if (!githubOrg) {
-    log('GitHub organization is required. Use --github-org or -gho to provide it.', 'error')
+    logger.error('GitHub organization is required. Use --github-org or -gho to provide it.', 'error')
     return
   }
 
   const policy = policies.find((policy) => policy.name === policyName)
   if (policy) {
-    log(`Applying policy: ${policyName} to GitHub organization: ${githubOrg}`)
+    logger.info(`Applying policy: ${policyName} to GitHub organization: ${githubOrg}`)
     policy.policy(githubOrg)
   } else {
-    log(`Policy '${policyName}' not found. Use --list to see available policies.`, 'error')
+    logger.info(`Policy '${policyName}' not found. Use --list to see available policies.`, 'error')
   }
-}
-
-const log = (message, type = 'info') => {
-  const prefix = type === 'warn' ? '[WARNING]' : type === 'error' ? '[ERROR]' : '[INFO]'
-  console.log(`${prefix} ${message}`)
 }
 
 module.exports = {
   listPolicies,
   applyPolicy,
-  log
+  logger
 }
