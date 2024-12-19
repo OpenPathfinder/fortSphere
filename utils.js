@@ -19,7 +19,7 @@ const applyPolicy = (policyName, githubOrg) => {
   const policy = policies.find((policy) => policy.name === policyName)
   if (policy) {
     logger.info(`Applying policy: ${policyName} to GitHub organization: ${githubOrg}`)
-    policy.policy(githubOrg)
+    return policy.policy(githubOrg)
   } else {
     logger.info(`Policy '${policyName}' not found. Use --list to see available policies.`, 'error')
   }

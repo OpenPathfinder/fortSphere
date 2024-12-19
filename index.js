@@ -21,13 +21,13 @@ command
   .option('-a, --apply <policy>', 'Apply a new policy')
   .option('-l, --list', 'List all policies')
   .option('-gho, --github-org <githubOrg>', 'Specify GitHub organization')
-  .action((options) => {
+  .action(async (options) => {
     const { apply, list, githubOrg } = options
 
     if (list) {
       listPolicies()
     } else if (apply) {
-      applyPolicy(apply, githubOrg)
+      await applyPolicy(apply, githubOrg)
     } else {
       logger.error('Please provide an option. Use --help to see available options.', 'error')
     }
