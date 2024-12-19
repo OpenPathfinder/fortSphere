@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { Command } = require('commander')
 const { listPolicies, applyPolicy } = require('./lib/utils')
 const logger = require('./lib/logger')
