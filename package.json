@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Fortify your Digital Sphere, once command at a time",
   "bin": {
-    "fortsphere": "./fortsphere.js"
+    "fortsphere": "fortsphere.js"
   },
   "scripts": {
     "lint": "standard",
