@@ -13,5 +13,8 @@
   "license": "MIT",
   "devDependencies": {
     "standard": "17.1.2"
+  },
+  "dependencies": {
+    "commander": "12.1.0"
   }
 }
