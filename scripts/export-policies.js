@@ -4,6 +4,7 @@ const { join } = require('path')
 
 const data = policies.map(policy => {
   return {
+    title: policy.title,
     name: policy.name,
     description: policy.description,
     technicalDetails: policy.technicalDetails
