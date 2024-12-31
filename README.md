@@ -33,5 +33,4 @@ Fortify your Digital Sphere, once command at a time
   - [Policy Management Command](https://openpathfinder.com/docs/fortSphere/usage#policy-management-command)
   - [GitHub Tokens](https://openpathfinder.com/docs/fortSphere/usage#github-tokens)
 - [Policies](https://openpathfinder.com/docs/fortSphere/policies)
-- Contributing (_Soon_)
-
+- [Contributing](https://openpathfinder.com/contribute)
